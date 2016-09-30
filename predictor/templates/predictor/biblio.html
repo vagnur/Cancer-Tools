@@ -1,0 +1,53 @@
+{% extends 'predictor/layout.html' %}
+{% block contenido %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h3 class="text-muted">GIST Cancer Tumor Size Predictor</h3>
+        <nav>
+          <ul class="nav nav-pills ">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="active"><a href="{% url 'bibliography' %}">Bibliography</a></li>
+            <li><a href="{% url 'tool' %}">Size Predictor</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <h2>Bibliography</h2>
+
+      <p align="justify">
+      Here you will find the description of the different models implemented in this tool. Due to the first phase of this proyect we only show the information about GIST cancer and its model that describe the evolution of the tumor in time.
+      <br>
+      <br>
+      The model considers different types of cells (P1,P2,P3) that have resistance to different treatment lines, the necrotic cells of the tumor (N) and the healthy tissue (S). The model is a set of differential equations that model the system behavior and the interaction between its components.
+      </p>
+
+      <div class="panel-group" id="accordion">
+        {% for cancer in cancer_list %}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{numbers.pop}}">{{cancer.nombre}}</a>
+            </h4>
+          </div>
+          <div id="collapse{{numbers.pop}}" class="panel-collapse collapse">
+            <div class="panel-body">{{cancer.descripcion}}
+            <ul>
+              {%for link in biblio_list%}
+                {%if cancer.id == link.cancer.id%}
+                  <li><a href="{{link.link}}">{{link.nombre}}</a></li>
+                {%endif%}
+              {%endfor%}
+            </ul>  
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div> 
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GIST Cancer Tumor Size Predictor</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'predictor/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'predictor/css/cancer.css' %}" rel="stylesheet">
+
+    
+  </head>
+
+  <body>
+
+    <div class="container">
+    {% block contenido %}{% endblock %}
+    </div> <!-- /container -->
+    <div style="background: transparent linear-gradient(to bottom, #1F2554 1%, #22212F 100%) repeat scroll 0% 0%;color:white;margin-top:50px;">
+      <div class="container" >
+        <!-- Site footer -->
+        <div class="row" style="margin-top:20px;">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <a href="http://cebib.cl"><img src="{% static 'predictor/img/footer-cebib.png' %}" alt=""></a>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6" style="border-left: solid 1px white;">
+            <a href="http://usach.cl/" target="_blank">
+              <img src="{% static 'predictor/img/logo_usach.png' %}">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <footer class="footer">
+              <p>&copy; 2016 Centro de Bioteconología y Bioingeniería - CeBiB</p>
+              <p>Universidad de Santiago de Chile</p>
+          </footer>
+        </div>
+      </div> <!-- /container -->
+    </div>
+
+  </body>
+</html>

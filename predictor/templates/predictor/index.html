@@ -1,0 +1,38 @@
+{% extends 'predictor/layout.html' %}
+{% block contenido %}
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h3 class="text-muted">GIST Cancer Tumor Size Predictor</h3>
+        <nav>
+          <ul class="nav nav-pills ">
+            <li class="active"><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'bibliography' %}">Bibliography</a></li>
+            <li><a href="{% url 'tool' %}">Size Predictor</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <h2>Overview</h2>
+      <p align="justify">
+      GIST Cancer Tumor Size Predictor is an online tool designed at the Center of Biotechnology and Bioengineering (CeBiB) to estimate the size in time of GIST cancer tumors, due to the effects of the treatment wich is subjected to. The results of the tool are showed in a  line graph of area vs days.
+      </p>
+
+      <h2>Bibliography</h2>
+      <p align="justify">
+      In the bibliography section one can look over the papers and knowledge used in the predictor tool. In this first phase there is only bibliography about GIST cancer, in the future we want to make this tool for others type of cancer and include the knowledge about that cancers.      
+      </p>
+
+      <h2>Tumor Size Predictor Tool</h2>
+      <p align="justify">
+      This section is the main section of this tool. In this phase this section is intended to be used by the scientists, to see the effects of the different variables in the tumor progression. Right know it is implemented the GIST predictor tool, wich models different types of cells (P1,P2,P3) that have resistance to different treatment lines, the necrotic cells of the tumor (N) and the healthy tissue (S). The model is a set of differential equations that model the system behavior and the interaction between its components.
+      </p>
+
+      <h2>Contact</h2>
+      <p align="justify">
+      If you have any question, coment, sugestion or anything you want to say us, just enter this section and do it, we are pleased to have feedback of the users of this tool.
+      </p>  
+
+{% endblock %}

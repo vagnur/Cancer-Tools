@@ -1,0 +1,47 @@
+{% extends 'predictor/layout.html' %}
+{% block contenido %}
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h3 class="text-muted">GIST Tumor Cancer Size Predictor</h3>
+        <nav>
+          <ul class="nav nav-pills ">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'bibliography' %}">Bibliography</a></li>
+            <li><a href="{% url 'tool' %}">Size Predictor</a></li>
+            <li class="active"><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <h2>Contact</h2>
+
+      <p align="justify">
+      If you have any question, coment, sugestion or anything you want to say us do it. We are pleased to have feedback of the users of this tool. Please provide a real email so we can answer as fast as we can!
+      </p>
+
+      <div class="form-group">
+        <label for="usr">Email</label>
+        <div class="input-group">
+          <span class="input-group-addon" id="mailicon"><span class="glyphicon glyphicon-user"></span></span>
+          <input type="text" class="form-control" aria-describedby="mailicon" placeholder="ggodoy@cebib.cl">       
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Comments</label>
+        <textarea class="form-control" rows="5" id="comment" placeholder="Write here your coments, sugestions or whatever you want to say to us!  "></textarea>
+      </div>
+
+      <div>
+        <div style="float: left;">
+          <a color="red" href="{% url 'index' %}">back</a>
+        </div>
+        <div style="float: right;">
+          <button type="button" class="btn btn-success btn-md">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Send!
+          </button>
+        </div>
+      </div>
+      
+{% endblock %}
